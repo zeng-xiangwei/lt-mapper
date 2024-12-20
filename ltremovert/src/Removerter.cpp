@@ -935,7 +935,7 @@ void Removerter::parsePointcloudSubsetUsingPtIdx( const pcl::PointCloud<PointTyp
 {
     // extractor
     pcl::ExtractIndices<PointType> extractor;
-    boost::shared_ptr<std::vector<int>> index_ptr = boost::make_shared<std::vector<int>>(_point_indexes);
+    pcl::shared_ptr<std::vector<int>> index_ptr = pcl::make_shared<std::vector<int>>(_point_indexes);
     extractor.setInputCloud(_ptcloud_orig);
     extractor.setIndices(index_ptr);
     extractor.setNegative(false); // If set to true, you can extract point clouds outside the specified index
